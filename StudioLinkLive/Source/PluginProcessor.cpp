@@ -30,6 +30,7 @@ StudioLinkLiveAudioProcessor::StudioLinkLiveAudioProcessor()
 			BARESIP_VERSION);
 	(void)sys_coredump_set(true);
 	libre_init();
+	log_enable_debug(true);
 	conf_configure();
 	baresip_init(conf_config(), false);
 	ua_init("baresip v" BARESIP_VERSION " (" ARCH "/" OS ")",
@@ -40,13 +41,16 @@ StudioLinkLiveAudioProcessor::StudioLinkLiveAudioProcessor()
 
 StudioLinkLiveAudioProcessor::~StudioLinkLiveAudioProcessor()
 {
-	re_cancel();
 	ua_stop_all(false);
-	(void)pthread_join(tid, NULL);
+	//(void)pthread_join(tid, NULL);
+	sys_msleep(500);
 	ua_close();
-	mod_close();
+	re_cancel();
+	conf_close();
 	baresip_close();
 	libre_close();
+        tmr_debug();
+        mem_debug();
 }
 
 //==============================================================================
