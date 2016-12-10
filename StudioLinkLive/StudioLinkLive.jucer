@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="eQ2Zna" name="StudioLinkLive" projectType="audioplug" version="1.0.0"
-              bundleIdentifier="com.yourcompany.StudioLinkLive" includeBinaryInAppConfig="1"
+<JUCERPROJECT id="eQ2Zna" name="StudioLinkLive" projectType="audioplug" version="SLVERSION_N"
+              bundleIdentifier="com.itsr.StudioLinkLive" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="0" buildAU="1" buildAUv3="0" buildRTAS="0"
               buildAAX="0" pluginName="StudioLinkLive" pluginDesc="StudioLinkLive"
-              pluginManufacturer="IT-Service Sebastian Reimers" pluginManufacturerCode="ITSR"
+              pluginManufacturer="ITSR" pluginManufacturerCode="ITSR"
               pluginCode="Eq2z" pluginChannelConfigs="{1,1},{2,2},{4,2}" pluginIsSynth="0"
               pluginWantsMidiIn="0" pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0"
               pluginEditorRequiresKeys="0" pluginAUExportPrefix="StudioLinkLiveAU"
