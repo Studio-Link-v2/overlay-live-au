@@ -18,11 +18,11 @@
 //==============================================================================
 /**
 */
-class StudioLinkLiveAudioProcessorEditor  : public AudioProcessorEditor
+class StudioLinkOnAirAudioProcessorEditor  : public AudioProcessorEditor
 {
 public:
-    StudioLinkLiveAudioProcessorEditor (StudioLinkLiveAudioProcessor&);
-    ~StudioLinkLiveAudioProcessorEditor();
+    StudioLinkOnAirAudioProcessorEditor (StudioLinkOnAirAudioProcessor&);
+    ~StudioLinkOnAirAudioProcessorEditor();
 
     //==============================================================================
     void paint (Graphics&) override;
@@ -31,9 +31,9 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    StudioLinkLiveAudioProcessor& processor;
+    StudioLinkOnAirAudioProcessor& processor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StudioLinkLiveAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StudioLinkOnAirAudioProcessorEditor)
 };
 
 

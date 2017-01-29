@@ -13,22 +13,22 @@
 
 
 //==============================================================================
-StudioLinkLiveAudioProcessorEditor::StudioLinkLiveAudioProcessorEditor (StudioLinkLiveAudioProcessor& p)
+StudioLinkOnAirAudioProcessorEditor::StudioLinkOnAirAudioProcessorEditor (StudioLinkOnAirAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
 }
 
-StudioLinkLiveAudioProcessorEditor::~StudioLinkLiveAudioProcessorEditor()
+StudioLinkOnAirAudioProcessorEditor::~StudioLinkOnAirAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void StudioLinkLiveAudioProcessorEditor::paint (Graphics& g)
+void StudioLinkOnAirAudioProcessorEditor::paint (Graphics& g)
 {
 
 }
 
-void StudioLinkLiveAudioProcessorEditor::resized()
+void StudioLinkOnAirAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..

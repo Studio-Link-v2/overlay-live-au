@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="eQ2Zna" name="StudioLinkLive" projectType="audioplug" version="SLVERSION_N"
-              bundleIdentifier="com.itsr.StudioLinkLive" includeBinaryInAppConfig="1"
+<JUCERPROJECT id="eQ2Zna" name="StudioLinkOnAir" projectType="audioplug" version="SLVERSION_N"
+              bundleIdentifier="com.itsr.StudioLinkOnAir" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="0" buildAU="1" buildAUv3="0" buildRTAS="0"
-              buildAAX="0" pluginName="StudioLinkLive" pluginDesc="StudioLinkLive"
+              buildAAX="0" pluginName="StudioLinkOnAir" pluginDesc="StudioLinkOnAir"
               pluginManufacturer="ITSR" pluginManufacturerCode="ITSR"
               pluginCode="Eq2z" pluginChannelConfigs="{1,1},{2,2},{4,2}" pluginIsSynth="0"
               pluginWantsMidiIn="0" pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0"
-              pluginEditorRequiresKeys="0" pluginAUExportPrefix="StudioLinkLiveAU"
-              pluginRTASCategory="" aaxIdentifier="com.itsr.StudioLinkLive"
+              pluginEditorRequiresKeys="0" pluginAUExportPrefix="StudioLinkOnAirAU"
+              pluginRTASCategory="" aaxIdentifier="com.itsr.StudioLinkOnAir"
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.2.4">
-  <MAINGROUP id="ymnjIx" name="StudioLinkLive">
+  <MAINGROUP id="ymnjIx" name="StudioLinkOnAir">
     <GROUP id="{10F87FD7-8999-8AA4-AFB4-DDB1F546B4EF}" name="Source">
       <FILE id="yPRhpR" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -24,8 +24,8 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="StudioLinkLive"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="StudioLinkLive"
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="StudioLinkOnAir"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="StudioLinkOnAir"
                        headerPath="../../../../my_include" osxSDK="default" osxCompatibility="10.6 SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>

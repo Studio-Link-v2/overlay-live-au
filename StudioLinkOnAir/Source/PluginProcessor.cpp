@@ -17,7 +17,7 @@
 pthread_t tid;
 
 //==============================================================================
-StudioLinkLiveAudioProcessor::StudioLinkLiveAudioProcessor()
+StudioLinkOnAirAudioProcessor::StudioLinkOnAirAudioProcessor()
 {
 	(void)re_fprintf(stderr, "activate baresip v%s"
 			" Copyright (C) 2010 - 2016"
@@ -39,7 +39,7 @@ StudioLinkLiveAudioProcessor::StudioLinkLiveAudioProcessor()
 	pthread_create(&tid, NULL, (void*(*)(void*))&re_main, NULL);
 }
 
-StudioLinkLiveAudioProcessor::~StudioLinkLiveAudioProcessor()
+StudioLinkOnAirAudioProcessor::~StudioLinkOnAirAudioProcessor()
 {
 	ua_stop_all(false);
 	//(void)pthread_join(tid, NULL);
@@ -54,12 +54,12 @@ StudioLinkLiveAudioProcessor::~StudioLinkLiveAudioProcessor()
 }
 
 //==============================================================================
-const String StudioLinkLiveAudioProcessor::getName() const
+const String StudioLinkOnAirAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool StudioLinkLiveAudioProcessor::acceptsMidi() const
+bool StudioLinkOnAirAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -68,7 +68,7 @@ bool StudioLinkLiveAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool StudioLinkLiveAudioProcessor::producesMidi() const
+bool StudioLinkOnAirAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -77,50 +77,50 @@ bool StudioLinkLiveAudioProcessor::producesMidi() const
    #endif
 }
 
-double StudioLinkLiveAudioProcessor::getTailLengthSeconds() const
+double StudioLinkOnAirAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int StudioLinkLiveAudioProcessor::getNumPrograms()
+int StudioLinkOnAirAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int StudioLinkLiveAudioProcessor::getCurrentProgram()
+int StudioLinkOnAirAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void StudioLinkLiveAudioProcessor::setCurrentProgram (int index)
+void StudioLinkOnAirAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const String StudioLinkLiveAudioProcessor::getProgramName (int index)
+const String StudioLinkOnAirAudioProcessor::getProgramName (int index)
 {
     return String();
 }
 
-void StudioLinkLiveAudioProcessor::changeProgramName (int index, const String& newName)
+void StudioLinkOnAirAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
 //==============================================================================
-void StudioLinkLiveAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void StudioLinkOnAirAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void StudioLinkLiveAudioProcessor::releaseResources()
+void StudioLinkOnAirAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool StudioLinkLiveAudioProcessor::setPreferredBusArrangement (bool isInput, int bus, const AudioChannelSet& preferredSet)
+bool StudioLinkOnAirAudioProcessor::setPreferredBusArrangement (bool isInput, int bus, const AudioChannelSet& preferredSet)
 {
     // Reject any bus arrangements that are not compatible with your plugin
 
@@ -144,7 +144,7 @@ bool StudioLinkLiveAudioProcessor::setPreferredBusArrangement (bool isInput, int
 }
 #endif
 
-void StudioLinkLiveAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
+void StudioLinkOnAirAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
     const int totalNumInputChannels  = getTotalNumInputChannels();
     const int totalNumOutputChannels = getTotalNumOutputChannels();
@@ -163,25 +163,25 @@ void StudioLinkLiveAudioProcessor::processBlock (AudioSampleBuffer& buffer, Midi
 }
 
 //==============================================================================
-bool StudioLinkLiveAudioProcessor::hasEditor() const
+bool StudioLinkOnAirAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* StudioLinkLiveAudioProcessor::createEditor()
+AudioProcessorEditor* StudioLinkOnAirAudioProcessor::createEditor()
 {
-    return new StudioLinkLiveAudioProcessorEditor (*this);
+    return new StudioLinkOnAirAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void StudioLinkLiveAudioProcessor::getStateInformation (MemoryBlock& destData)
+void StudioLinkOnAirAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void StudioLinkLiveAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void StudioLinkOnAirAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -191,5 +191,5 @@ void StudioLinkLiveAudioProcessor::setStateInformation (const void* data, int si
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new StudioLinkLiveAudioProcessor();
+    return new StudioLinkOnAirAudioProcessor();
 }
