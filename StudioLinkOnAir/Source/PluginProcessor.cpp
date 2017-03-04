@@ -47,7 +47,7 @@ StudioLinkOnAirAudioProcessor::~StudioLinkOnAirAudioProcessor()
 	if (running) {
 		ua_stop_all(false);
 		//(void)pthread_join(tid, NULL);
-		sys_msleep(500);
+		sys_msleep(800);
 		ua_close();
 		re_cancel();
 		conf_close();
