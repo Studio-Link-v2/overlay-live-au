@@ -16,41 +16,47 @@
 
 pthread_t tid;
 
+bool running = false;
+
 //==============================================================================
 StudioLinkOnAirAudioProcessor::StudioLinkOnAirAudioProcessor()
 {
-	(void)re_fprintf(stderr, "activate baresip v%s"
-			" Copyright (C) 2010 - 2016"
-			" Alfred E. Heggestad et al.\n",
-			BARESIP_VERSION);
 
-	(void)re_fprintf(stderr, "activate baresip v%s"
-			" Copyright (C) 2010 - 2015"
-			" Alfred E. Heggestad et al.\n",
-			BARESIP_VERSION);
-	(void)sys_coredump_set(true);
-	libre_init();
-	log_enable_debug(true);
-	conf_configure();
-	baresip_init(conf_config(), false);
-	ua_init("baresip v" BARESIP_VERSION " (" ARCH "/" OS ")",
-			true, true, true, false);
-	conf_modules();
-	pthread_create(&tid, NULL, (void*(*)(void*))&re_main, NULL);
+	if (!running) {
+		(void)re_fprintf(stderr, "activate baresip v%s"
+				" Copyright (C) 2010 - 2016"
+				" Alfred E. Heggestad et al. STUDIO LINK DEBUG\n",
+				BARESIP_VERSION);
+
+		(void)sys_coredump_set(true);
+		libre_init();
+		log_enable_debug(true);
+		conf_configure();
+		baresip_init(conf_config(), false);
+		ua_init("baresip v" BARESIP_VERSION " (" ARCH "/" OS ")",
+				true, true, true, false);
+		conf_modules();
+		pthread_create(&tid, NULL, (void*(*)(void*))&re_main, NULL);
+
+		running = true;
+	}
 }
 
 StudioLinkOnAirAudioProcessor::~StudioLinkOnAirAudioProcessor()
 {
-	ua_stop_all(false);
-	//(void)pthread_join(tid, NULL);
-	sys_msleep(500);
-	ua_close();
-	re_cancel();
-	conf_close();
-	baresip_close();
-	libre_close();
-        tmr_debug();
-        mem_debug();
+	if (running) {
+		ua_stop_all(false);
+		//(void)pthread_join(tid, NULL);
+		sys_msleep(500);
+		ua_close();
+		re_cancel();
+		conf_close();
+		baresip_close();
+		libre_close();
+		tmr_debug();
+		mem_debug();
+		running = false;
+	}
 }
 
 //==============================================================================
