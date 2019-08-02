@@ -32,9 +32,9 @@ StudioLinkOnAirAudioProcessor::StudioLinkOnAirAudioProcessor()
 		libre_init();
 		log_enable_debug(true);
 		conf_configure(false);
-		baresip_init(conf_config(), false);
+		baresip_init(conf_config());
 		ua_init("baresip v" BARESIP_VERSION " (" ARCH "/" OS ")",
-				true, true, true, false);
+				true, true, true);
 		conf_modules();
 		pthread_create(&tid, NULL, (void*(*)(void*))&re_main, NULL);
 
