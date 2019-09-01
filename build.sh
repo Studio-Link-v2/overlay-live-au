@@ -4,8 +4,9 @@
 #xcodebuild -configuration Release
 #cd ../../../../../
 
-JUCE/extras/Projucer/Builds/MacOSX/build/Release/Projucer.app/Contents/MacOS/Projucer --resave StudioLinkOnAir/StudioLinkOnAir.jucer
+#JUCE/extras/Projucer/Builds/MacOSX/build/Release/Projucer.app/Contents/MacOS/Projucer --resave StudioLinkOnAir/StudioLinkOnAir.jucer
+JUCE/Projucer.app/Contents/MacOS/Projucer --resave StudioLinkOnAir/StudioLinkOnAir.jucer
 
-cd StudioLinkOnAir/Builds/MacOSX/
+pushd StudioLinkOnAir/Builds/MacOSX/
 xcodebuild -configuration Release -xcconfig ../../../build.xconfig
-cd ../../../
+popd
