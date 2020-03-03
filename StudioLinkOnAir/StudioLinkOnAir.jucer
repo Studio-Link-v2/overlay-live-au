@@ -26,7 +26,7 @@
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="StudioLinkOnAir"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="StudioLinkOnAir"
-                       headerPath="../../../../my_include" osxSDK="default" osxCompatibility="10.6 SDK"/>
+                       headerPath="../../../../my_include" osxSDK="default" osxCompatibility="10.9 SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../JUCE/modules"/>
