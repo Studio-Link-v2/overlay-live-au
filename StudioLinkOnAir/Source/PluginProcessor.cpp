@@ -63,6 +63,7 @@ StudioLinkOnAirAudioProcessor::~StudioLinkOnAirAudioProcessor()
 		module_app_unload();
 		conf_close();
 		baresip_close();
+		mod_close();
 		libre_close();
 		tmr_debug();
 		mem_debug();
